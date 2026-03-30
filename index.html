@@ -3,437 +3,409 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Category-Selective Brain Networks with Graph Neural Networks</title>
-  <meta name="description" content="Project page for Category-Selective Brain Networks with Graph Neural Networks." />
+  <title>Decoding Functional Networks for Visual Categories via Graph Neural Networks</title>
+  <meta name="description" content="Project page for Decoding Functional Networks for Visual Categories via Graph Neural Networks." />
   <style>
     :root{
-      --bg:#f7f8fb;
-      --card:#ffffff;
-      --text:#172033;
-      --muted:#5b6475;
-      --line:#e5e8ef;
-      --accent:#3558e6;
-      --accent-soft:#eef2ff;
-      --max:1100px;
-      --shadow:0 10px 30px rgba(17,24,39,0.08);
-      --radius:20px;
+      --bg:#ffffff;
+      --text:#222222;
+      --muted:#555555;
+      --line:#e8e8e8;
+      --accent:#2f5cff;
+      --max:980px;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background:var(--bg);
       color:var(--text);
-      line-height:1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.65;
     }
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .nav{
-      position:sticky;top:0;z-index:20;
-      background:rgba(247,248,251,0.88);
-      backdrop-filter: blur(12px);
-      border-bottom:1px solid var(--line);
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:28px 22px 56px;
     }
-    .nav-inner{
-      display:flex;justify-content:space-between;align-items:center;
-      max-width:var(--max);margin:0 auto;padding:14px 20px;
-    }
-    .brand{font-weight:700;color:var(--text)}
-    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
-    .nav-links a{color:var(--muted);font-size:0.95rem}
-    .hero{padding:54px 0 30px}
-    .hero-card{
-      background:linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
-      border:1px solid var(--line);
-      border-radius:28px;
-      box-shadow:var(--shadow);
-      padding:34px;
-    }
-    .eyebrow{
-      display:inline-block;
-      padding:6px 12px;
-      background:var(--accent-soft);
-      color:var(--accent);
-      border-radius:999px;
-      font-weight:600;
-      font-size:0.92rem;
-      margin-bottom:14px;
+    .hero{
+      text-align:center;
+      padding-top:18px;
     }
     h1{
-      margin:0 0 14px;
-      font-size:clamp(2rem, 3.4vw, 3.3rem);
-      line-height:1.12;
-      letter-spacing:-0.02em;
-    }
-    .subtitle{
-      color:var(--muted);
-      font-size:1.08rem;
-      margin-bottom:10px;
+      margin:0 0 10px;
+      font-size:2.2rem;
+      line-height:1.18;
+      font-weight:700;
     }
     .authors{
-      font-size:1.02rem;
-      margin:10px 0 6px;
-      font-weight:600;
+      font-size:1.05rem;
+      margin-bottom:8px;
     }
     .affils{
+      font-size:1rem;
       color:var(--muted);
-      margin-bottom:22px;
+      margin-bottom:10px;
     }
-    .buttons{
-      display:flex;gap:12px;flex-wrap:wrap;margin-top:18px
+    .venue{
+      font-size:1.02rem;
+      margin:10px 0 18px;
+      font-weight:600;
     }
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:14px;border:1px solid var(--line);
-      background:#fff;color:var(--text);font-weight:600;min-width:120px;
+    .links{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:28px;
     }
-    .btn.primary{
-      background:var(--accent);color:white;border-color:var(--accent)
-    }
-    .hero-grid{
-      display:grid;grid-template-columns:1.15fr 0.85fr;gap:22px;align-items:start;margin-top:28px;
-    }
-    .video-box, .stats-box, .card{
-      background:var(--card);
+    .pill{
+      display:inline-block;
       border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
+      border-radius:999px;
+      padding:9px 16px;
+      color:var(--text);
+      background:#fafafa;
+      font-weight:600;
     }
-    .video-box video, .media-grid img{
-      width:100%;display:block
+    .hero-media{
+      margin:0 auto 34px;
+      max-width:860px;
     }
-    .box-pad{padding:22px}
-    .stats{
-      display:grid;grid-template-columns:repeat(2,1fr);gap:14px
+    .hero-media img,
+    .hero-media video{
+      display:block;
+      width:100%;
+      border-radius:14px;
+      border:1px solid var(--line);
     }
-    .stat{
-      background:#fbfcff;border:1px solid var(--line);border-radius:18px;padding:18px
-    }
-    .stat .big{
-      font-size:1.8rem;font-weight:800;line-height:1.05;margin-bottom:6px
-    }
-    section{padding:16px 0 8px}
     h2{
-      margin:0 0 16px;font-size:1.7rem;letter-spacing:-0.02em
+      margin:34px 0 12px;
+      font-size:1.55rem;
     }
-    .section-card{
-      background:var(--card);
+    p{
+      margin:0 0 14px;
+      font-size:1.02rem;
+    }
+    .contrib{
+      margin:0;
+      padding-left:22px;
+    }
+    .contrib li{
+      margin:9px 0;
+    }
+    .figure{
+      margin:18px 0 30px;
+    }
+    .figure img,
+    .figure video{
+      display:block;
+      width:100%;
+      border-radius:14px;
       border:1px solid var(--line);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:28px;
+      background:#fafafa;
     }
-    .lead{
-      font-size:1.08rem;color:var(--muted)
+    .caption{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:0.95rem;
     }
-    .grid-2{
-      display:grid;grid-template-columns:1fr 1fr;gap:22px
+    .grid2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      align-items:start;
     }
-    .bullets{
-      margin:0;padding-left:20px
+    .card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px;
+      background:#fcfcfc;
     }
-    .bullets li{margin:10px 0}
-    .method-grid{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px
+    .card h3{
+      margin:0 0 10px;
+      font-size:1.1rem;
     }
-    .step{
-      border:1px solid var(--line);border-radius:18px;padding:18px;background:#fbfcff
+    .card ul{
+      margin:0;
+      padding-left:20px;
     }
-    .step-num{
-      width:34px;height:34px;border-radius:999px;background:var(--accent-soft);
-      color:var(--accent);display:flex;align-items:center;justify-content:center;
-      font-weight:800;margin-bottom:10px
+    .card li{
+      margin:8px 0;
     }
-    .step h3{margin:0 0 8px;font-size:1.04rem}
-    .step p{margin:0;color:var(--muted);font-size:0.97rem}
-    .media-grid{
-      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px
-    }
-    .media-item{
-      border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff
-    }
-    .caption{padding:14px 16px;color:var(--muted);font-size:0.96rem}
     .poster-frame{
-      width:100%;height:720px;border:1px solid var(--line);border-radius:18px;background:white
+      width:100%;
+      height:720px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
     }
     pre{
+      background:#f6f6f6;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px;
+      overflow:auto;
+      font-size:0.95rem;
+      line-height:1.5;
       margin:0;
-      background:#0f172a;color:#e2e8f0;
-      border-radius:18px;padding:20px;overflow:auto;font-size:0.95rem
     }
-    .footer{
-      padding:28px 0 50px;color:var(--muted);font-size:0.95rem
+    footer{
+      margin-top:42px;
+      padding-top:20px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:0.94rem;
     }
-    .small-note{
-      color:var(--muted);font-size:0.95rem;margin-top:10px
+    .footer-line{
+      margin:6px 0;
     }
-    @media (max-width: 950px){
-      .hero-grid, .grid-2, .media-grid, .method-grid{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr 1fr}
+    .small{
+      font-size:0.94rem;
+      color:var(--muted);
     }
-    @media (max-width: 620px){
-      .hero-card, .section-card{padding:20px}
-      .nav-inner{gap:14px;align-items:flex-start;flex-direction:column}
-      .stats{grid-template-columns:1fr}
+    @media (max-width: 760px){
+      h1{font-size:1.75rem}
+      .grid2{grid-template-columns:1fr}
       .poster-frame{height:520px}
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">Signed GNN fMRI Project</div>
-      <div class="nav-links">
-        <a href="#abstract">Abstract</a>
-        <a href="#method">Method</a>
-        <a href="#results">Results</a>
-        <a href="#poster">Poster</a>
-        <a href="#citation">Citation</a>
+  <div class="container">
+
+    <section class="hero">
+      <h1>Decoding Functional Networks for Visual Categories via Graph Neural Networks</h1>
+      <div class="authors">Shira Karmi<sup>1</sup>, Galia Avidan<sup>2</sup>, Tammy Riklin-Raviv<sup>1</sup></div>
+      <div class="affils">
+        <sup>1</sup>The School of Electrical and Computer Engineering, Ben-Gurion University of the Negev<br>
+        <sup>2</sup>Department of Psychology, Ben-Gurion University of the Negev
       </div>
-    </div>
-  </nav>
+      <div class="venue">IEEE ISBI 2026</div>
 
-  <header class="hero">
-    <div class="wrap">
-      <div class="hero-card">
-        <div class="eyebrow">ISBI 2026</div>
-        <h1>Category-Selective Brain Networks with Graph Neural Networks</h1>
-        <div class="subtitle">
-          Interpretable decoding of visual categories from stimulus-driven functional connectivity in high-resolution 7T fMRI.
-        </div>
-        <div class="authors">Shira Karmi, Galia Avidan, Tammy Riklin Raviv</div>
-        <div class="affils">
-          Ben-Gurion University of the Negev
-          <!-- Replace with full affiliation formatting if you want separate departments/schools -->
-        </div>
-
-        <div class="buttons">
-          <a class="btn primary" href="static/pdfs/ISBI_2026.pdf" target="_blank" rel="noopener">Paper / Poster PDF</a>
-          <a class="btn" href="https://github.com/Shira8/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks" target="_blank" rel="noopener">Code</a>
-          <a class="btn" href="#poster">Poster Viewer</a>
-          <a class="btn" href="#citation">BibTeX</a>
-        </div>
-
-        <div class="hero-grid">
-          <div class="video-box">
-            <!-- Replace the filename below with your preferred teaser video -->
-            <video autoplay muted loop playsinline controls poster="static/images/hero_preview.png">
-              <source src="static/videos/banner_video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div class="stats-box box-pad">
-            <h2 style="margin-top:0">Highlights</h2>
-            <div class="stats">
-              <div class="stat">
-                <div class="big">8</div>
-                <div>NSD participants</div>
-              </div>
-              <div class="stat">
-                <div class="big">7T</div>
-                <div>High-resolution fMRI</div>
-              </div>
-              <div class="stat">
-                <div class="big">0.78</div>
-                <div>Mean test accuracy</div>
-              </div>
-              <div class="stat">
-                <div class="big">0.88</div>
-                <div>Mean macro-AP</div>
-              </div>
-            </div>
-            <p class="small-note">
-              Categories: <strong>sports</strong>, <strong>food</strong>, and <strong>vehicle</strong>.
-            </p>
-          </div>
-        </div>
+      <div class="links">
+        <a class="pill" href="static/pdfs/ISBI_2026.pdf" target="_blank" rel="noopener">Paper</a>
+        <a class="pill" href="https://github.com/Shira8/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks" target="_blank" rel="noopener">Code</a>
+        <a class="pill" href="static/pdfs/ISBI_2026.pdf" target="_blank" rel="noopener">Poster</a>
+        <a class="pill" href="static/files/seminar_shira_final.pptx" target="_blank" rel="noopener">Slides</a>
       </div>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section id="abstract">
-      <div class="section-card">
-        <h2>Abstract</h2>
-        <p class="lead">
-          We study how distributed functional coupling encodes visual categories in the human cortex.
-          Using high-resolution 7T fMRI from the Natural Scenes Dataset (NSD), we construct parcel-level
-          connectivity graphs and train a Signed Graph Neural Network that models both positive and negative
-          interactions. Interpretability is embedded through a shared sparse edge mask and complemented by
-          class-specific Gradient×Input saliency. The model achieves accurate multi-class decoding
-          (sports, food, vehicle) while revealing reproducible and biologically meaningful subnetworks
-          within ventral and dorsal pathways.
-        </p>
+      <div class="hero-media">
+        <!-- Replace with your best overview figure or teaser video -->
+        <img src="static/images/overview_figure.png" alt="Project overview">
       </div>
     </section>
 
     <section>
-      <div class="section-card">
-        <h2>Overview</h2>
-        <div class="grid-2">
-          <div>
-            <ul class="bullets">
-              <li>Naturalistic image-viewing fMRI from the NSD dataset, acquired at 7T.</li>
-              <li>COCO masks and captions are fused to define visual super-categories.</li>
-              <li>Trial-level parcel time series are converted into functional connectivity graphs.</li>
-              <li>A Signed GNN processes positive and negative correlations as separate graph channels.</li>
-              <li>Explainability combines a shared sparse edge mask with class-specific saliency maps.</li>
-            </ul>
-          </div>
-          <div>
-            <ul class="bullets">
-              <li>Mean performance across subjects: 0.78 test accuracy and 0.88 macro-AP.</li>
-              <li>Food shows the highest separability, followed by sports and vehicle.</li>
-              <li>Learned subnetworks align with ventral, dorsal, and limbic visual organization.</li>
-              <li>The framework connects machine learning performance with neuroscience interpretation.</li>
-            </ul>
-          </div>
+      <h2>Key Contributions</h2>
+      <ul class="contrib">
+        <li>We model stimulus-driven fMRI as signed functional brain graphs, separating positive and negative connectivity patterns.</li>
+        <li>We decode visual categories from distributed functional networks rather than flattened voxel or ROI features.</li>
+        <li>We combine a learned edge mask with Gradient × Input saliency to reveal both global and category-specific subnetworks.</li>
+        <li>We identify reproducible category-selective brain networks for food, sports, and vehicle stimuli.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Abstract</h2>
+      <p>
+        We study how distributed functional coupling encodes visual categories in the human cortex.
+        Using high-resolution 7T fMRI from the Natural Scenes Dataset (NSD), we construct parcel-level
+        connectivity graphs and train a Signed Graph Neural Network that models both positive and negative
+        interactions. Interpretability is embedded through a shared sparse edge mask and complemented by
+        class-specific Gradient × Input saliency. The model achieves accurate multi-class decoding
+        while revealing biologically meaningful subnetworks in ventral and dorsal pathways.
+      </p>
+    </section>
+
+    <section>
+      <h2>Background</h2>
+      <p>
+        fMRI measures brain activity indirectly through the BOLD signal, which reflects changes in oxygenated and
+        deoxygenated blood. When brain regions fluctuate together, they are functionally connected, and these
+        interactions can be represented as functional brain networks.
+      </p>
+      <p>
+        Most decoding approaches focus on voxels, ROIs, or vectorized connectivity features. Our goal is to move
+        from isolated local responses to distributed network interactions: to decode visual categories, identify
+        which regions communicate, and reveal category-selective subnetworks.
+      </p>
+
+      <div class="figure">
+        <!-- Replace with your experiment setup figure from the slides -->
+        <img src="static/images/fmri_experiment_setup.png" alt="fMRI experiment setup">
+        <div class="caption">fMRI experiment setup: scanner, visual stimuli, recognition task, and functional brain response.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why Graph Neural Networks?</h2>
+      <p>
+        Brain connectivity is naturally a graph: nodes correspond to brain regions or parcels, and edges represent
+        functional connectivity. Graph Neural Networks preserve this structure, learn from neighbor interactions,
+        and capture multi-hop dependencies across the network.
+      </p>
+      <p>
+        This makes GNNs a natural fit for learning category-selective patterns from parcel-to-parcel interactions,
+        instead of flattening connectivity matrices into vectors and losing relational structure.
+      </p>
+    </section>
+
+    <section>
+      <h2>Method</h2>
+      <div class="grid2">
+        <div class="card">
+          <h3>Dataset and Labels</h3>
+          <ul>
+            <li>Natural Scenes Dataset (NSD)</li>
+            <li>7T stimulus-driven fMRI</li>
+            <li>8 subjects</li>
+            <li>Up to ~10,000 natural images per subject</li>
+            <li>Categories: sports, food, vehicle</li>
+            <li>Labels built from COCO masks and captions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Connectivity and Model</h3>
+          <ul>
+            <li>Parcel-level correlation matrices</li>
+            <li>Signed graph split into positive and negative edges</li>
+            <li>Signed GNN for graph classification</li>
+            <li>Cross-entropy training objective</li>
+            <li>Mask sparsity and entropy regularization</li>
+            <li>Built-in interpretability</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="figure">
+        <!-- Replace with the best architecture figure from your slides -->
+        <img src="static/images/signed_gnn_architecture.png" alt="Signed GNN architecture">
+        <div class="caption">Signed GNN architecture for decoding visual categories from functional connectivity graphs.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Label Fusion and Connectivity Construction</h2>
+      <p>
+        We combine two evidence sources for each image: mask evidence as spatial evidence and text evidence as semantic evidence.
+        This fusion gives more reliable labels for natural scenes than either source alone.
+      </p>
+      <p>
+        Each sample is represented by a connectivity matrix, where entry (i, j) captures the correlation between region i and
+        region j. Rather than asking only which region responds, we model which regions interact with each other.
+      </p>
+
+      <div class="grid2">
+        <div class="figure">
+          <img src="static/images/label_fusion_example.png" alt="Label fusion example">
+          <div class="caption">Example of category evidence from COCO masks and captions.</div>
+        </div>
+        <div class="figure">
+          <img src="static/images/connectivity_matrix_example.png" alt="Connectivity matrix example">
+          <div class="caption">Functional connectivity matrix representation of brain-to-brain interactions.</div>
         </div>
       </div>
     </section>
 
-    <section id="method">
-      <div class="section-card">
-        <h2>Method</h2>
-        <div class="method-grid">
-          <div class="step">
-            <div class="step-num">1</div>
-            <h3>Dataset</h3>
-            <p>
-              We use the Natural Scenes Dataset, where participants view thousands of COCO images
-              during a continuous recognition task while 7T fMRI is recorded.
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <h3>Label Fusion</h3>
-            <p>
-              Each image is scored for sports, food, and vehicle using a fusion of COCO instance masks
-              and category-related caption evidence.
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <h3>Connectivity Graphs</h3>
-            <p>
-              Parcel time series are grouped into blocks, z-scored, and converted into parcel-to-parcel
-              Pearson correlation matrices that form signed graphs.
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-num">4</div>
-            <h3>Signed GNN + XAI</h3>
-            <p>
-              Positive and negative correlations are processed separately, then pooled for classification.
-              Explanations come from a shared sparse mask and Gradient×Input saliency.
-            </p>
-          </div>
-        </div>
+    <section>
+      <h2>Training Objective and Explainability</h2>
+      <p>
+        The training objective combines cross-entropy loss with mask regularization, including sparsity and entropy terms.
+        The idea is not only to classify accurately, but also to learn a sparse and interpretable connectivity backbone.
+      </p>
+      <p>
+        We use two complementary explanation methods. The edge mask is learned during training and reveals global importance.
+        Gradient × Input is computed after training and provides category-specific saliency. Together they give a global view
+        plus fine-grained relevance.
+      </p>
 
-        <div class="media-grid">
-          <div class="media-item">
-            <!-- Replace with your exported method figure -->
-            <img src="static/images/method_diagram.png" alt="Method pipeline" />
-            <div class="caption">
-              Method pipeline. Replace <code>static/images/method_diagram.png</code> with your exported figure or diagram.
-            </div>
-          </div>
-          <div class="media-item">
-            <!-- Replace with your experiment/setup figure -->
-            <img src="static/images/experiment_overview.png" alt="fMRI experiment overview" />
-            <div class="caption">
-              fMRI experiment overview. A good place for your scanner → stimulus → response → brain activity figure.
-            </div>
-          </div>
-        </div>
+      <div class="figure">
+        <img src="static/images/explainability_overview.png" alt="Explainability overview">
+        <div class="caption">Global connectivity backbone from the learned edge mask and category-specific relevance from Gradient × Input.</div>
       </div>
     </section>
 
-    <section id="results">
-      <div class="section-card">
-        <h2>Results</h2>
-        <p class="lead">
-          The Signed GNN progressively organizes graph embeddings into category-selective clusters
-          and reveals interpretable subnetworks that are reproducible across subjects.
-        </p>
+    <section>
+      <h2>Experiments and Results</h2>
+      <p>
+        The model learns meaningful and separable connectivity patterns. In the learned embedding space, clear clustering emerges
+        by visual category. The discovered subnetworks are reproducible across subjects and align with known visual-system organization.
+      </p>
 
-        <div class="grid-2" style="margin-top:18px">
-          <div class="card">
-            <div class="box-pad">
-              <h3 style="margin-top:0">Quantitative Summary</h3>
-              <ul class="bullets">
-                <li>Mean test accuracy: <strong>0.78</strong></li>
-                <li>Mean macro-average precision: <strong>0.88</strong></li>
-                <li>Food AP: <strong>0.92</strong></li>
-                <li>Sports AP: <strong>0.88</strong></li>
-                <li>Vehicle AP: <strong>0.84</strong></li>
-              </ul>
-            </div>
-          </div>
-          <div class="card">
-            <div class="box-pad">
-              <h3 style="margin-top:0">Neuroscience Interpretation</h3>
-              <ul class="bullets">
-                <li><strong>Food:</strong> ventral occipitotemporal and limbic-orbitofrontal regions.</li>
-                <li><strong>Sports:</strong> dorsal visuomotor and frontoparietal regions.</li>
-                <li><strong>Vehicle:</strong> ventral occipitotemporal and posterior parietal regions.</li>
-              </ul>
-            </div>
-          </div>
+      <div class="grid2">
+        <div class="card">
+          <h3>Performance Summary</h3>
+          <ul>
+            <li>Mean test accuracy: <strong>0.78</strong></li>
+            <li>Mean macro-AP: <strong>0.88</strong></li>
+            <li>Food AP: <strong>0.92</strong></li>
+            <li>Sports AP: <strong>0.88</strong></li>
+            <li>Vehicle AP: <strong>0.84</strong></li>
+          </ul>
         </div>
+        <div class="card">
+          <h3>Category-Selective Networks</h3>
+          <ul>
+            <li><strong>Food:</strong> ventral visual + limbic / orbitofrontal</li>
+            <li><strong>Sports:</strong> dorsal visuomotor + parietal</li>
+            <li><strong>Vehicle:</strong> lateral occipital + ventral visual</li>
+            <li>Patterns are reproducible across subjects</li>
+          </ul>
+        </div>
+      </div>
 
-        <div class="media-grid">
-          <div class="media-item">
-            <!-- Replace with your t-SNE figure -->
-            <img src="static/images/tsne_progression.png" alt="t-SNE progression" />
-            <div class="caption">
-              t-SNE progression of graph embeddings during training.
-            </div>
-          </div>
-          <div class="media-item">
-            <!-- Replace with your brain maps figure -->
-            <img src="static/images/brain_maps.png" alt="Category-specific brain maps" />
-            <div class="caption">
-              Top-weighted parcels for vehicle, sports, and food across subjects.
-            </div>
-          </div>
-        </div>
+      <div class="figure">
+        <img src="static/images/connectivity_embeddings.png" alt="Connectivity embeddings">
+        <div class="caption">t-SNE visualization of learned graph representations.</div>
+      </div>
+
+      <div class="figure">
+        <img src="static/images/category_selective_networks.png" alt="Category-selective brain networks">
+        <div class="caption">Discovered category-selective brain networks for food, sports, and vehicle stimuli.</div>
       </div>
     </section>
 
-    <section id="poster">
-      <div class="section-card">
-        <h2>Poster / Paper</h2>
-        <p class="lead">
-          The PDF below can be embedded directly from your repository.
-        </p>
-        <iframe class="poster-frame" src="static/pdfs/ISBI_2026.pdf"></iframe>
-      </div>
+    <section>
+      <h2>Conclusion</h2>
+      <p>
+        Visual categories are encoded in distributed functional networks. A Signed GNN can decode category information from
+        stimulus-driven connectivity, while separating positive and negative edges preserves important network structure.
+        Combining edge masks and Gradient × Input provides interpretable explanations and links machine learning with
+        network neuroscience.
+      </p>
     </section>
 
-    <section id="citation">
-      <div class="section-card">
-        <h2>BibTeX</h2>
-<pre>@inproceedings{karmi2026categoryselective,
-  title={Category-Selective Brain Networks with Graph Neural Networks},
-  author={Karmi, Shira and Avidan, Galia and Riklin Raviv, Tammy},
-  booktitle={IEEE International Symposium on Biomedical Imaging (ISBI)},
-  year={2026}
+    <section>
+      <h2>Poster</h2>
+      <iframe class="poster-frame" src="static/pdfs/ISBI_2026.pdf"></iframe>
+      <p class="small">You can replace this with the final camera-ready PDF later.</p>
+    </section>
+
+    <section>
+      <h2>BibTeX</h2>
+      <pre>@inproceedings{karmi2026decoding,
+  title     = {Decoding Functional Networks for Visual Categories via Graph Neural Networks},
+  author    = {Karmi, Shira and Avidan, Galia and Riklin-Raviv, Tammy},
+  booktitle = {Proceedings of the IEEE International Symposium on Biomedical Imaging (ISBI)},
+  year      = {2026}
 }</pre>
-        <p class="small-note">
-          Update this entry if your final camera-ready title or publication details change.
-        </p>
-      </div>
     </section>
 
-    <div class="footer">
-      Built for GitHub Pages. Replace the placeholder images in <code>static/images/</code>,
-      keep the PDF in <code>static/pdfs/ISBI_2026.pdf</code>, and your page should work as-is.
-    </div>
-  </main>
+    <footer>
+      <div class="footer-line">
+        This page was built using the
+        <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>,
+        adopted from the
+        <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a>
+        project page. You are free to borrow the source code of this website, provided that you link back to the original template in the footer.
+      </div>
+      <div class="footer-line">
+        This website is licensed under a
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
