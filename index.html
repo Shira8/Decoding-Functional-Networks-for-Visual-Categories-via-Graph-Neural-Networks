@@ -1,520 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Category-Selective Brain Networks with Graph Neural Networks</title>
+  <meta name="description" content="Project page for Category-Selective Brain Networks with Graph Neural Networks." />
+  <style>
+    :root{
+      --bg:#f7f8fb;
+      --card:#ffffff;
+      --text:#172033;
+      --muted:#5b6475;
+      --line:#e5e8ef;
+      --accent:#3558e6;
+      --accent-soft:#eef2ff;
+      --max:1100px;
+      --shadow:0 10px 30px rgba(17,24,39,0.08);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .nav{
+      position:sticky;top:0;z-index:20;
+      background:rgba(247,248,251,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;justify-content:space-between;align-items:center;
+      max-width:var(--max);margin:0 auto;padding:14px 20px;
+    }
+    .brand{font-weight:700;color:var(--text)}
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);font-size:0.95rem}
+    .hero{padding:54px 0 30px}
+    .hero-card{
+      background:linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:34px;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:6px 12px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      border-radius:999px;
+      font-weight:600;
+      font-size:0.92rem;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem, 3.4vw, 3.3rem);
+      line-height:1.12;
+      letter-spacing:-0.02em;
+    }
+    .subtitle{
+      color:var(--muted);
+      font-size:1.08rem;
+      margin-bottom:10px;
+    }
+    .authors{
+      font-size:1.02rem;
+      margin:10px 0 6px;
+      font-weight:600;
+    }
+    .affils{
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+    .buttons{
+      display:flex;gap:12px;flex-wrap:wrap;margin-top:18px
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 16px;border-radius:14px;border:1px solid var(--line);
+      background:#fff;color:var(--text);font-weight:600;min-width:120px;
+    }
+    .btn.primary{
+      background:var(--accent);color:white;border-color:var(--accent)
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.15fr 0.85fr;gap:22px;align-items:start;margin-top:28px;
+    }
+    .video-box, .stats-box, .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .video-box video, .media-grid img{
+      width:100%;display:block
+    }
+    .box-pad{padding:22px}
+    .stats{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:14px
+    }
+    .stat{
+      background:#fbfcff;border:1px solid var(--line);border-radius:18px;padding:18px
+    }
+    .stat .big{
+      font-size:1.8rem;font-weight:800;line-height:1.05;margin-bottom:6px
+    }
+    section{padding:16px 0 8px}
+    h2{
+      margin:0 0 16px;font-size:1.7rem;letter-spacing:-0.02em
+    }
+    .section-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+    .lead{
+      font-size:1.08rem;color:var(--muted)
+    }
+    .grid-2{
+      display:grid;grid-template-columns:1fr 1fr;gap:22px
+    }
+    .bullets{
+      margin:0;padding-left:20px
+    }
+    .bullets li{margin:10px 0}
+    .method-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px
+    }
+    .step{
+      border:1px solid var(--line);border-radius:18px;padding:18px;background:#fbfcff
+    }
+    .step-num{
+      width:34px;height:34px;border-radius:999px;background:var(--accent-soft);
+      color:var(--accent);display:flex;align-items:center;justify-content:center;
+      font-weight:800;margin-bottom:10px
+    }
+    .step h3{margin:0 0 8px;font-size:1.04rem}
+    .step p{margin:0;color:var(--muted);font-size:0.97rem}
+    .media-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px
+    }
+    .media-item{
+      border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff
+    }
+    .caption{padding:14px 16px;color:var(--muted);font-size:0.96rem}
+    .poster-frame{
+      width:100%;height:720px;border:1px solid var(--line);border-radius:18px;background:white
+    }
+    pre{
+      margin:0;
+      background:#0f172a;color:#e2e8f0;
+      border-radius:18px;padding:20px;overflow:auto;font-size:0.95rem
+    }
+    .footer{
+      padding:28px 0 50px;color:var(--muted);font-size:0.95rem
+    }
+    .small-note{
+      color:var(--muted);font-size:0.95rem;margin-top:10px
+    }
+    @media (max-width: 950px){
+      .hero-grid, .grid-2, .media-grid, .method-grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 620px){
+      .hero-card, .section-card{padding:20px}
+      .nav-inner{gap:14px;align-items:flex-start;flex-direction:column}
+      .stats{grid-template-columns:1fr}
+      .poster-frame{height:520px}
+    }
+  </style>
 </head>
 <body>
-
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">Signed GNN fMRI Project</div>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#poster">Poster</a>
+        <a href="#citation">Citation</a>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="eyebrow">ISBI 2026</div>
+        <h1>Category-Selective Brain Networks with Graph Neural Networks</h1>
+        <div class="subtitle">
+          Interpretable decoding of visual categories from stimulus-driven functional connectivity in high-resolution 7T fMRI.
+        </div>
+        <div class="authors">Shira Karmi, Galia Avidan, Tammy Riklin Raviv</div>
+        <div class="affils">
+          Ben-Gurion University of the Negev
+          <!-- Replace with full affiliation formatting if you want separate departments/schools -->
+        </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+        <div class="buttons">
+          <a class="btn primary" href="static/pdfs/ISBI_2026.pdf" target="_blank" rel="noopener">Paper / Poster PDF</a>
+          <a class="btn" href="https://github.com/Shira8/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks" target="_blank" rel="noopener">Code</a>
+          <a class="btn" href="#poster">Poster Viewer</a>
+          <a class="btn" href="#citation">BibTeX</a>
+        </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+        <div class="hero-grid">
+          <div class="video-box">
+            <!-- Replace the filename below with your preferred teaser video -->
+            <video autoplay muted loop playsinline controls poster="static/images/hero_preview.png">
+              <source src="static/videos/banner_video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+          <div class="stats-box box-pad">
+            <h2 style="margin-top:0">Highlights</h2>
+            <div class="stats">
+              <div class="stat">
+                <div class="big">8</div>
+                <div>NSD participants</div>
+              </div>
+              <div class="stat">
+                <div class="big">7T</div>
+                <div>High-resolution fMRI</div>
+              </div>
+              <div class="stat">
+                <div class="big">0.78</div>
+                <div>Mean test accuracy</div>
+              </div>
+              <div class="stat">
+                <div class="big">0.88</div>
+                <div>Mean macro-AP</div>
+              </div>
+            </div>
+            <p class="small-note">
+              Categories: <strong>sports</strong>, <strong>food</strong>, and <strong>vehicle</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+  <main class="wrap">
+    <section id="abstract">
+      <div class="section-card">
+        <h2>Abstract</h2>
+        <p class="lead">
+          We study how distributed functional coupling encodes visual categories in the human cortex.
+          Using high-resolution 7T fMRI from the Natural Scenes Dataset (NSD), we construct parcel-level
+          connectivity graphs and train a Signed Graph Neural Network that models both positive and negative
+          interactions. Interpretability is embedded through a shared sparse edge mask and complemented by
+          class-specific Gradient×Input saliency. The model achieves accurate multi-class decoding
+          (sports, food, vehicle) while revealing reproducible and biologically meaningful subnetworks
+          within ventral and dorsal pathways.
+        </p>
+      </div>
+    </section>
 
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+    <section>
+      <div class="section-card">
+        <h2>Overview</h2>
+        <div class="grid-2">
+          <div>
+            <ul class="bullets">
+              <li>Naturalistic image-viewing fMRI from the NSD dataset, acquired at 7T.</li>
+              <li>COCO masks and captions are fused to define visual super-categories.</li>
+              <li>Trial-level parcel time series are converted into functional connectivity graphs.</li>
+              <li>A Signed GNN processes positive and negative correlations as separate graph channels.</li>
+              <li>Explainability combines a shared sparse edge mask with class-specific saliency maps.</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="bullets">
+              <li>Mean performance across subjects: 0.78 test accuracy and 0.88 macro-AP.</li>
+              <li>Food shows the highest separability, followed by sports and vehicle.</li>
+              <li>Learned subnetworks align with ventral, dorsal, and limbic visual organization.</li>
+              <li>The framework connects machine learning performance with neuroscience interpretation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method">
+      <div class="section-card">
+        <h2>Method</h2>
+        <div class="method-grid">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Dataset</h3>
+            <p>
+              We use the Natural Scenes Dataset, where participants view thousands of COCO images
+              during a continuous recognition task while 7T fMRI is recorded.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Label Fusion</h3>
+            <p>
+              Each image is scored for sports, food, and vehicle using a fusion of COCO instance masks
+              and category-related caption evidence.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Connectivity Graphs</h3>
+            <p>
+              Parcel time series are grouped into blocks, z-scored, and converted into parcel-to-parcel
+              Pearson correlation matrices that form signed graphs.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h3>Signed GNN + XAI</h3>
+            <p>
+              Positive and negative correlations are processed separately, then pooled for classification.
+              Explanations come from a shared sparse mask and Gradient×Input saliency.
+            </p>
+          </div>
+        </div>
+
+        <div class="media-grid">
+          <div class="media-item">
+            <!-- Replace with your exported method figure -->
+            <img src="static/images/method_diagram.png" alt="Method pipeline" />
+            <div class="caption">
+              Method pipeline. Replace <code>static/images/method_diagram.png</code> with your exported figure or diagram.
+            </div>
+          </div>
+          <div class="media-item">
+            <!-- Replace with your experiment/setup figure -->
+            <img src="static/images/experiment_overview.png" alt="fMRI experiment overview" />
+            <div class="caption">
+              fMRI experiment overview. A good place for your scanner → stimulus → response → brain activity figure.
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <section id="results">
+      <div class="section-card">
+        <h2>Results</h2>
+        <p class="lead">
+          The Signed GNN progressively organizes graph embeddings into category-selective clusters
+          and reveals interpretable subnetworks that are reproducible across subjects.
+        </p>
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+        <div class="grid-2" style="margin-top:18px">
+          <div class="card">
+            <div class="box-pad">
+              <h3 style="margin-top:0">Quantitative Summary</h3>
+              <ul class="bullets">
+                <li>Mean test accuracy: <strong>0.78</strong></li>
+                <li>Mean macro-average precision: <strong>0.88</strong></li>
+                <li>Food AP: <strong>0.92</strong></li>
+                <li>Sports AP: <strong>0.88</strong></li>
+                <li>Vehicle AP: <strong>0.84</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box-pad">
+              <h3 style="margin-top:0">Neuroscience Interpretation</h3>
+              <ul class="bullets">
+                <li><strong>Food:</strong> ventral occipitotemporal and limbic-orbitofrontal regions.</li>
+                <li><strong>Sports:</strong> dorsal visuomotor and frontoparietal regions.</li>
+                <li><strong>Vehicle:</strong> ventral occipitotemporal and posterior parietal regions.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="media-grid">
+          <div class="media-item">
+            <!-- Replace with your t-SNE figure -->
+            <img src="static/images/tsne_progression.png" alt="t-SNE progression" />
+            <div class="caption">
+              t-SNE progression of graph embeddings during training.
+            </div>
+          </div>
+          <div class="media-item">
+            <!-- Replace with your brain maps figure -->
+            <img src="static/images/brain_maps.png" alt="Category-specific brain maps" />
+            <div class="caption">
+              Top-weighted parcels for vehicle, sports, and food across subjects.
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
+    </section>
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
+    <section id="poster">
+      <div class="section-card">
+        <h2>Poster / Paper</h2>
+        <p class="lead">
+          The PDF below can be embedded directly from your repository.
+        </p>
+        <iframe class="poster-frame" src="static/pdfs/ISBI_2026.pdf"></iframe>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
+    </section>
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+    <section id="citation">
+      <div class="section-card">
+        <h2>BibTeX</h2>
+<pre>@inproceedings{karmi2026categoryselective,
+  title={Category-Selective Brain Networks with Graph Neural Networks},
+  author={Karmi, Shira and Avidan, Galia and Riklin Raviv, Tammy},
+  booktitle={IEEE International Symposium on Biomedical Imaging (ISBI)},
+  year={2026}
+}</pre>
+        <p class="small-note">
+          Update this entry if your final camera-ready title or publication details change.
+        </p>
       </div>
+    </section>
+
+    <div class="footer">
+      Built for GitHub Pages. Replace the placeholder images in <code>static/images/</code>,
+      keep the PDF in <code>static/pdfs/ISBI_2026.pdf</code>, and your page should work as-is.
     </div>
-  </section>
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  </main>
+</body>
+</html>
