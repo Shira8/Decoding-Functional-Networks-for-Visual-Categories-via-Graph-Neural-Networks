@@ -1,405 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="Decoding Functional Networks for Visual Categories via Graph Neural Networks - ISBI 2026">
+  <meta name="description" content="Interpretable decoding of visual categories from stimulus-driven 7T fMRI using signed graph neural networks and explainable connectivity analysis.">
+  <meta name="keywords" content="fMRI, Graph Neural Networks, Functional Connectivity, Explainability, Natural Scenes Dataset, Signed GNN, ISBI 2026">
+  <meta name="author" content="Shira Karmi, Galia Avidan, Tammy Riklin-Raviv">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <meta property="og:title" content="Decoding Functional Networks for Visual Categories via Graph Neural Networks">
+  <meta property="og:description" content="Stimulus-driven 7T fMRI, signed functional connectivity graphs, and interpretable category decoding for sports, food, and vehicle stimuli.">
+  <meta property="og:url" content="https://shira8.github.io/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks/">
+  <meta property="og:image" content="https://shira8.github.io/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks/static/images/overview_figure.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Decoding Functional Networks for Visual Categories via Graph Neural Networks">
+  <meta name="twitter:description" content="Interpretable signed GNNs for category-selective brain networks from naturalistic 7T fMRI.">
+  <meta name="twitter:image" content="https://shira8.github.io/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks/static/images/overview_figure.png">
+
+  <meta name="citation_title" content="Decoding Functional Networks for Visual Categories via Graph Neural Networks">
+  <meta name="citation_author" content="Karmi, Shira">
+  <meta name="citation_author" content="Avidan, Galia">
+  <meta name="citation_author" content="Riklin-Raviv, Tammy">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="IEEE International Symposium on Biomedical Imaging (ISBI)">
+
   <title>Decoding Functional Networks for Visual Categories via Graph Neural Networks</title>
-  <meta name="description" content="Project page for Decoding Functional Networks for Visual Categories via Graph Neural Networks." />
-  <style>
-    :root{
-      --bg:#ffffff;
-      --text:#222222;
-      --muted:#555555;
-      --line:#e8e8e8;
-      --accent:#2f5cff;
-      --max:980px;
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Decoding Functional Networks for Visual Categories via Graph Neural Networks",
+    "description": "Interpretable decoding of visual categories from stimulus-driven 7T fMRI using signed graph neural networks and explainable connectivity analysis.",
+    "author": [
+      {"@type": "Person", "name": "Shira Karmi"},
+      {"@type": "Person", "name": "Galia Avidan"},
+      {"@type": "Person", "name": "Tammy Riklin-Raviv"}
+    ],
+    "datePublished": "2026",
+    "publisher": {
+      "@type": "Organization",
+      "name": "IEEE ISBI"
+    },
+    "isPartOf": {
+      "@type": "Event",
+      "name": "IEEE International Symposium on Biomedical Imaging (ISBI 2026)"
+    },
+    "url": "https://shira8.github.io/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks/",
+    "image": "https://shira8.github.io/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks/static/images/overview_figure.png",
+    "keywords": ["fMRI", "Functional Connectivity", "Graph Neural Networks", "Explainability", "Natural Scenes Dataset"],
+    "isAccessibleForFree": true,
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://shira8.github.io/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks/"
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height:1.65;
-    }
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:28px 22px 56px;
-    }
-    .hero{
-      text-align:center;
-      padding-top:18px;
-    }
-    h1{
-      margin:0 0 10px;
-      font-size:2.2rem;
-      line-height:1.18;
-      font-weight:700;
-    }
-    .authors{
-      font-size:1.05rem;
-      margin-bottom:8px;
-    }
-    .affils{
-      font-size:1rem;
-      color:var(--muted);
-      margin-bottom:10px;
-    }
-    .venue{
-      font-size:1.02rem;
-      margin:10px 0 18px;
-      font-weight:600;
-    }
-    .links{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:28px;
-    }
-    .pill{
-      display:inline-block;
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:9px 16px;
-      color:var(--text);
-      background:#fafafa;
-      font-weight:600;
-    }
-    .hero-media{
-      margin:0 auto 34px;
-      max-width:860px;
-    }
-    .hero-media img,
-    .hero-media video{
-      display:block;
-      width:100%;
-      border-radius:14px;
-      border:1px solid var(--line);
-    }
-    h2{
-      margin:34px 0 12px;
-      font-size:1.55rem;
-    }
-    p{
-      margin:0 0 14px;
-      font-size:1.02rem;
-    }
-    .contrib{
-      margin:0;
-      padding-left:22px;
-    }
-    .contrib li{
-      margin:9px 0;
-    }
-    .figure{
-      margin:18px 0 30px;
-    }
-    .figure img,
-    .figure video{
-      display:block;
-      width:100%;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:#fafafa;
-    }
-    .caption{
-      margin-top:8px;
-      color:var(--muted);
-      font-size:0.95rem;
-    }
-    .grid2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
-      align-items:start;
-    }
-    .card{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:18px;
-      background:#fcfcfc;
-    }
-    .card h3{
-      margin:0 0 10px;
-      font-size:1.1rem;
-    }
-    .card ul{
-      margin:0;
-      padding-left:20px;
-    }
-    .card li{
-      margin:8px 0;
-    }
-    .poster-frame{
-      width:100%;
-      height:720px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#fff;
-    }
-    pre{
-      background:#f6f6f6;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:18px;
-      overflow:auto;
-      font-size:0.95rem;
-      line-height:1.5;
-      margin:0;
-    }
-    footer{
-      margin-top:42px;
-      padding-top:20px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:0.94rem;
-    }
-    .footer-line{
-      margin:6px 0;
-    }
-    .small{
-      font-size:0.94rem;
-      color:var(--muted);
-    }
-    @media (max-width: 760px){
-      h1{font-size:1.75rem}
-      .grid2{grid-template-columns:1fr}
-      .poster-frame{height:520px}
-    }
-  </style>
+  }
+  </script>
 </head>
 <body>
-  <div class="container">
 
-    <section class="hero">
-      <h1>Decoding Functional Networks for Visual Categories via Graph Neural Networks</h1>
-      <div class="authors">Shira Karmi<sup>1</sup>, Galia Avidan<sup>2</sup>, Tammy Riklin-Raviv<sup>1</sup></div>
-      <div class="affils">
-        <sup>1</sup>The School of Electrical and Computer Engineering, Ben-Gurion University of the Negev<br>
-        <sup>2</sup>Department of Psychology, Ben-Gurion University of the Negev
-      </div>
-      <div class="venue">IEEE ISBI 2026</div>
+<main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Decoding Functional Networks for Visual Categories via Graph Neural Networks</h1>
 
-      <div class="links">
-        <a class="pill" href="static/pdfs/ISBI_2026.pdf" target="_blank" rel="noopener">Paper</a>
-        <a class="pill" href="https://github.com/Shira8/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks" target="_blank" rel="noopener">Code</a>
-        <a class="pill" href="https://arxiv.org/abs/2603.28931" target="_blank" rel="noopener">Arxiv</a>
-      </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Shira Karmi<sup>1,3</sup>,</span>
+              <span class="author-block">Galia Avidan<sup>2,3</sup>,</span>
+              <span class="author-block">Tammy Riklin-Raviv<sup>1,3</sup></span>
+            </div>
 
-      <div class="hero-media">
-        <!-- Replace with your best overview figure or teaser video -->
-        <img src="static/images/123456788.png" alt="Project overview">
-      </div>
-    </section>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>The School of Electrical and Computer Engineering, Ben-Gurion University of the Negev<br>
+                <sup>2</sup>Department of Psychology, Ben-Gurion University of the Negev<br>
+                <sup>3</sup>The School of Brain Sciences and Cognition, Ben-Gurion University of the Negev<br>
+                <strong>IEEE ISBI 2026</strong>
+              </span>
+            </div>
 
-    <section>
-      <h2>Key Contributions</h2>
-      <ul class="contrib">
-        <li>We model stimulus-driven fMRI as signed functional brain graphs, separating positive and negative connectivity patterns.</li>
-        <li>We decode visual categories from distributed functional networks rather than flattened voxel or ROI features.</li>
-        <li>We combine a learned edge mask with Gradient × Input saliency to reveal both global and category-specific subnetworks.</li>
-        <li>We identify reproducible category-selective brain networks for food, sports, and vehicle stimuli.</li>
-      </ul>
-    </section>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/pdfs/paper.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
 
-    <section>
-      <h2>Abstract</h2>
-      <p>
-        Understanding how large-scale brain networks represent visual categories is fundamental to linking perception and cortical organization. Using high-resolution 7T fMRI from the Natural Scenes Dataset, we construct parcel-level functional graphs and train a signed Graph Neural Network that models both positive and negative interactions, with a sparse edge mask and class-specific saliency. The model accurately decodes category-specific functional connectivity states (sports, food, vehicles) and reveals reproducible, biologically meaningful subnetworks along the ventral and dorsal visual pathways. This framework bridges machine learning and neuroscience by extending voxel-level category selectivity to a connectivity-based representation of visual processing.
-      </p>
-    </section>
+                <span class="link-block">
+                  <a href="https://github.com/Shira8/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
 
-    <section>
-      <h2>Background</h2>
-      <p>
-        fMRI measures brain activity indirectly through the BOLD signal, which reflects changes in oxygenated and
-        deoxygenated blood. When brain regions fluctuate together, they are functionally connected, and these
-        interactions can be represented as functional brain networks.
-      </p>
-      <p>
-        Most decoding approaches focus on voxels, ROIs, or vectorized connectivity features. Our goal is to move
-        from isolated local responses to distributed network interactions: to decode visual categories, identify
-        which regions communicate, and reveal category-selective subnetworks.
-      </p>
+                <span class="link-block">
+                  <a href="static/pdfs/poster.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-image"></i></span>
+                    <span>Poster</span>
+                  </a>
+                </span>
 
-      <div class="figure">
-        <!-- Replace with your experiment setup figure from the slides -->
-        <img src="static/images/fmri_experiment_setup.png" alt="fMRI experiment setup">
-        <div class="caption">fMRI experiment setup: scanner, visual stimuli, recognition task, and functional brain response.</div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Why Graph Neural Networks?</h2>
-      <p>
-        Brain connectivity is naturally a graph: nodes correspond to brain regions or parcels, and edges represent
-        functional connectivity. Graph Neural Networks preserve this structure, learn from neighbor interactions,
-        and capture multi-hop dependencies across the network.
-      </p>
-      <p>
-        This makes GNNs a natural fit for learning category-selective patterns from parcel-to-parcel interactions,
-        instead of flattening connectivity matrices into vectors and losing relational structure.
-      </p>
-    </section>
-
-    <section>
-      <h2>Method</h2>
-      <div class="grid2">
-        <div class="card">
-          <h3>Dataset and Labels</h3>
-          <ul>
-            <li>Natural Scenes Dataset (NSD)</li>
-            <li>7T stimulus-driven fMRI</li>
-            <li>8 subjects</li>
-            <li>Up to ~10,000 natural images per subject</li>
-            <li>Categories: sports, food, vehicle</li>
-            <li>Labels built from COCO masks and captions</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Connectivity and Model</h3>
-          <ul>
-            <li>Parcel-level correlation matrices</li>
-            <li>Signed graph split into positive and negative edges</li>
-            <li>Signed GNN for graph classification</li>
-            <li>Cross-entropy training objective</li>
-            <li>Mask sparsity and entropy regularization</li>
-            <li>Built-in interpretability</li>
-          </ul>
+                <span class="link-block">
+                  <a href="static/files/isbi_shira_final.pptx" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-powerpoint"></i></span>
+                    <span>Slides</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="figure">
-        <!-- Replace with the best architecture figure from your slides -->
-        <img src="static/images/123456788.png" alt="Signed GNN architecture">
-        <div class="caption">Signed GNN architecture for decoding visual categories from functional connectivity graphs.</div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Label Fusion and Connectivity Construction</h2>
-      <p>
-        We combine two evidence sources for each image: mask evidence as spatial evidence and text evidence as semantic evidence.
-        This fusion gives more reliable labels for natural scenes than either source alone.
-      </p>
-      <p>
-        Each sample is represented by a connectivity matrix, where entry (i, j) captures the correlation between region i and
-        region j. Rather than asking only which region responds, we model which regions interact with each other.
-      </p>
-
-      <div class="grid2">
-        <div class="figure">
-          <img src="static/images/label_fusion_example.png" alt="Label fusion example">
-          <div class="caption">Example of category evidence from COCO masks and captions.</div>
+  <!-- Main Figure -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="has-text-centered">
+          <img src="static/images/overview_figure.png" alt="Project overview" style="max-width: 100%; height: auto;" loading="lazy"/>
         </div>
-        <div class="figure">
-          <img src="static/images/connectivity_matrix_example.png" alt="Connectivity matrix example">
-          <div class="caption">Functional connectivity matrix representation of brain-to-brain interactions.</div>
-        </div>
-      </div>
-    </section>
 
-    <section>
-      <h2>Training Objective and Explainability</h2>
-      <p>
-        The training objective combines cross-entropy loss with mask regularization, including sparsity and entropy terms.
-        The idea is not only to classify accurately, but also to learn a sparse and interpretable connectivity backbone.
-      </p>
-      <p>
-        We use two complementary explanation methods. The edge mask is learned during training and reveals global importance.
-        Gradient × Input is computed after training and provides category-specific saliency. Together they give a global view
-        plus fine-grained relevance.
-      </p>
-
-      <div class="figure">
-        <img src="static/images/explainability_overview.png" alt="Explainability overview">
-        <div class="caption">Global connectivity backbone from the learned edge mask and category-specific relevance from Gradient × Input.</div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Experiments and Results</h2>
-      <p>
-        The model learns meaningful and separable connectivity patterns. In the learned embedding space, clear clustering emerges
-        by visual category. The discovered subnetworks are reproducible across subjects and align with known visual-system organization.
-      </p>
-
-      <div class="grid2">
-        <div class="card">
-          <h3>Performance Summary</h3>
-          <ul>
-            <li>Mean test accuracy: <strong>0.78</strong></li>
-            <li>Mean macro-AP: <strong>0.88</strong></li>
-            <li>Food AP: <strong>0.92</strong></li>
-            <li>Sports AP: <strong>0.88</strong></li>
-            <li>Vehicle AP: <strong>0.84</strong></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Category-Selective Networks</h3>
-          <ul>
-            <li><strong>Food:</strong> ventral visual + limbic / orbitofrontal</li>
-            <li><strong>Sports:</strong> dorsal visuomotor + parietal</li>
-            <li><strong>Vehicle:</strong> lateral occipital + ventral visual</li>
-            <li>Patterns are reproducible across subjects</li>
-          </ul>
+        <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Key Contributions</h2>
+            <div class="content has-text-justified">
+              <p>
+                We introduce an interpretable framework for decoding visual categories from stimulus-driven functional connectivity in human cortex.
+              </p>
+              <ul>
+                <li><strong>Multimodal labeling pipeline:</strong> COCO instance masks and captions are fused to derive reliable super-category assignments for sports, food, and vehicle stimuli.</li>
+                <li><strong>Signed connectivity modeling:</strong> a signed GNN learns from both positive and negative functional interactions instead of flattening connectivity matrices into vectors.</li>
+                <li><strong>Global and class-specific explainability:</strong> a learned sparse edge mask reveals a shared connectivity backbone, and Gradient × Input saliency highlights category-selective subnetworks.</li>
+                <li><strong>Biologically meaningful results:</strong> the learned networks recover ventral, dorsal, and limbic patterns consistent with known category-selective visual systems.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+  <!-- End main figure -->
 
-      <div class="figure">
-        <img src="static/images/connectivity_embeddings.png" alt="Connectivity embeddings">
-        <div class="caption">t-SNE visualization of learned graph representations.</div>
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Understanding how large-scale brain networks represent visual categories is fundamental to linking perception and cortical organization.
+              Using high-resolution 7T fMRI from the Natural Scenes Dataset, we construct parcel-level functional graphs and train a signed Graph Neural Network that models both positive and negative interactions, with interpretability enabled by a sparse edge mask and class-specific saliency.
+            </p>
+            <p>
+              The model accurately decodes stimulus categories including sports, food, and vehicles, and reveals reproducible, biologically meaningful subnetworks along the ventral and dorsal visual pathways.
+              This framework bridges machine learning and neuroscience by extending voxel-level category selectivity to a connectivity-based representation of visual processing.
+            </p>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
 
-      <div class="figure">
-        <img src="static/images/category_selective_networks.png" alt="Category-selective brain networks">
-        <div class="caption">Discovered category-selective brain networks for food, sports, and vehicle stimuli.</div>
+  <!-- Background -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Background</h2>
+          <div class="content has-text-justified">
+            <p>
+              fMRI measures brain activity indirectly through the BOLD signal.
+              When different brain regions fluctuate together, they are functionally connected, and these interactions can be modeled as networks.
+              Most decoding approaches still focus on voxels, ROIs, or vectorized connectivity features, which weakens network-level interpretation.
+            </p>
+            <p>
+              Our goal is to model functional brain networks directly, decode visual categories, identify which regions communicate, and reveal category-selective subnetworks under naturalistic viewing.
+            </p>
+            <div class="has-text-centered" style="margin: 2rem 0;">
+              <img src="static/images/fmri_experiment_setup.png" alt="fMRI experiment setup" style="max-width: 100%; height: auto;" loading="lazy"/>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
+  <!-- End background -->
 
-    <section>
-      <h2>Conclusion</h2>
-      <p>
-        Visual categories are encoded in distributed functional networks. A Signed GNN can decode category information from
-        stimulus-driven connectivity, while separating positive and negative edges preserves important network structure.
-        Combining edge masks and Gradient × Input provides interpretable explanations and links machine learning with
-        network neuroscience.
-      </p>
-    </section>
+  <!-- Motivation -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Motivation</h2>
+          <div class="content has-text-justified">
+            <p>
+              Visual processing relies on distributed interactions between brain regions rather than only local responses.
+              Prior graph-learning work on fMRI has focused mainly on resting-state or clinical settings, while stimulus-driven, signed connectivity remains less explored.
+            </p>
+            <p>
+              We therefore ask whether an explainable signed GNN can decode visual categories from naturalistic fMRI and reveal the connectivity structure that supports each decision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End motivation -->
 
-    <section>
-      <h2>Poster</h2>
-      <iframe class="poster-frame" src="static/pdfs/ISBI_2026.pdf"></iframe>
-      <p class="small">You can replace this with the final camera-ready PDF later.</p>
-    </section>
+  <!-- Method -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+          <div class="content has-text-justified">
+            <p>
+              We use the Natural Scenes Dataset (NSD), a large-scale 7T stimulus-driven fMRI resource with eight participants and up to about 10,000 natural images per subject.
+              Images are drawn from COCO and each image is shown for 4 seconds during a continuous recognition task.
+            </p>
+            <p>
+              After preprocessing and HCP-MMP1 parcellation, parcel-wise time series are converted into functional connectivity matrices.
+              Each matrix is split into positive and negative channels and processed by a signed GNN with a learned sparse edge mask.
+              Explanations are obtained through the global edge mask and category-specific Gradient × Input saliency.
+            </p>
+            <div class="has-text-centered" style="margin: 2rem 0;">
+              <img src="static/images/signed_gnn_architecture.png" alt="Signed GNN architecture" style="max-width: 100%; height: auto;" loading="lazy"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End method -->
 
-    <section>
-      <h2>BibTeX</h2>
-      <pre>@inproceedings{karmi2026decoding,
+  <!-- Labeling and connectivity -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Label Fusion and Connectivity Construction</h2>
+          <div class="content has-text-justified">
+            <p>
+              We define three super-categories: sports, food, and vehicle.
+              For each NSD image, we combine spatial evidence from COCO instance masks with semantic evidence from captions.
+              The fused score determines how strongly each image supports a category and guides soft label realization.
+            </p>
+            <p>
+              Each graph sample is built from parcel-wise fMRI time series grouped into blocks, concatenated across time, and converted into a Pearson correlation matrix.
+              Positive and negative correlations are then separated into signed adjacency channels for graph learning.
+            </p>
+
+            <div class="columns is-centered">
+              <div class="column">
+                <img src="static/images/label_fusion_example.png" alt="Label fusion example" style="max-width: 100%; height: auto;" loading="lazy"/>
+              </div>
+              <div class="column">
+                <img src="static/images/connectivity_matrix_example.png" alt="Connectivity matrix example" style="max-width: 100%; height: auto;" loading="lazy"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End labeling and connectivity -->
+
+  <!-- Explainability -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Explainability</h2>
+          <div class="content has-text-justified">
+            <p>
+              The training objective combines cross-entropy with mask regularization, encouraging a sparse and interpretable connectivity backbone.
+              The learned edge mask provides a global, category-agnostic view of important connections across the dataset.
+            </p>
+            <p>
+              To recover category-specific relevance, we compute Gradient × Input saliency maps for sports, food, and vehicle.
+              Together, these two views provide both stable global structure and fine-grained category-selective subnetworks.
+            </p>
+            <div class="has-text-centered" style="margin: 2rem 0;">
+              <img src="static/images/explainability_overview.png" alt="Explainability overview" style="max-width: 100%; height: auto;" loading="lazy"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End explainability -->
+
+  <!-- Experiments and Results -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Experiments and Results</h2>
+          <div class="content has-text-justified">
+
+            <p>
+              Across subjects, the signed GNN learns meaningful and separable connectivity representations.
+              In t-SNE space, clusters for sports, food, and vehicle emerge progressively during training, indicating that the model disentangles category-selective connectivity structure.
+            </p>
+
+            <div class="has-text-centered" style="margin: 2rem 0;">
+              <img src="static/images/connectivity_embeddings.png" alt="Connectivity embeddings" style="max-width: 100%; height: auto;" loading="lazy"/>
+            </div>
+
+            <p>
+              On the right hemisphere, the model reaches mean accuracy of 0.78 and mean macro-AP of 0.88.
+              On the left hemisphere, performance is similarly strong, with accuracy of 0.80 and macro-AP of 0.91.
+              Food achieves the highest average precision, followed by sports and vehicle.
+            </p>
+
+            <div class="has-text-centered" style="margin: 2rem 0;">
+              <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Hemisphere</th>
+                    <th>Accuracy</th>
+                    <th>Sports AP</th>
+                    <th>Food AP</th>
+                    <th>Vehicle AP</th>
+                    <th>Macro-AP</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>RH</td>
+                    <td>0.78</td>
+                    <td>0.88</td>
+                    <td>0.92</td>
+                    <td>0.84</td>
+                    <td>0.88</td>
+                  </tr>
+                  <tr>
+                    <td>LH</td>
+                    <td>0.80</td>
+                    <td>0.90</td>
+                    <td>0.94</td>
+                    <td>0.88</td>
+                    <td>0.91</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>
+              Compared with a GraphCL-style contrastive baseline, the supervised signed GNN performs substantially better.
+              The baseline reaches accuracy 0.637 and macro-AP 0.698, while our model reaches 0.780 and 0.880, respectively.
+            </p>
+
+            <div class="has-text-centered" style="margin: 2rem 0;">
+              <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Accuracy</th>
+                    <th>Sports AP</th>
+                    <th>Food AP</th>
+                    <th>Vehicle AP</th>
+                    <th>Macro-AP</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>GraphCL baseline</td>
+                    <td>0.637</td>
+                    <td>0.728</td>
+                    <td>0.752</td>
+                    <td>0.613</td>
+                    <td>0.698</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Signed GNN (ours)</strong></td>
+                    <td><strong>0.780</strong></td>
+                    <td><strong>0.880</strong></td>
+                    <td><strong>0.920</strong></td>
+                    <td><strong>0.840</strong></td>
+                    <td><strong>0.880</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>
+              Relevance maps reveal category-selective subnetworks.
+              Food emphasizes ventral visual and limbic-orbitofrontal regions, sports emphasizes dorsal visuomotor and parietal regions, and vehicle emphasizes lateral occipital and ventral visual regions.
+            </p>
+
+            <div class="has-text-centered" style="margin: 2rem 0;">
+              <img src="static/images/category_selective_networks.png" alt="Category-selective brain networks" style="max-width: 100%; height: auto;" loading="lazy"/>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End experiments and results -->
+
+  <!-- Conclusion Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Conclusion</h2>
+          <div class="content has-text-justified">
+            <p>
+              Visual categories are encoded in distributed functional networks.
+              The proposed signed GNN decodes category information from stimulus-driven connectivity while preserving the structure of positive and negative edges.
+              By combining a learned edge mask with Gradient × Input saliency, the framework provides both accurate decoding and interpretable explanations of category-selective brain networks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Conclusion section -->
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@inproceedings{karmi2026decoding,
   title     = {Decoding Functional Networks for Visual Categories via Graph Neural Networks},
   author    = {Karmi, Shira and Avidan, Galia and Riklin-Raviv, Tammy},
   booktitle = {Proceedings of the IEEE International Symposium on Biomedical Imaging (ISBI)},
   year      = {2026}
-}</pre>
-    </section>
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
 
-    <footer>
-      <div class="footer-line">
-        This page was built using the
-        <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>,
-        adopted from the
-        <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a>
-        project page. You are free to borrow the source code of this website, provided that you link back to the original template in the footer.
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, provided that you link back to the original template in the footer.<br>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="footer-line">
-        This website is licensed under a
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
+</main>
 </body>
 </html>
