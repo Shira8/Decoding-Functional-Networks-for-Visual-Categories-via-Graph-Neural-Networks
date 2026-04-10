@@ -1,80 +1,155 @@
-# Academic Project Page Template
+# Decoding Functional Networks for Visual Categories via Graph Neural Networks
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+Project page for the ISBI 2026 work by **Shira Karmi, Galia Avidan, and Tammy Riklin-Raviv**.
 
-A clean, responsive template for academic project pages.
+This repository is based on the **Academic Project Page Template** and has been adapted for a neuroscience / fMRI project page.
 
+ArXiv: `https://arxiv.org/abs/2603.28931`
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+## Project page URL
 
+If GitHub Pages is enabled from this repository, the page should appear at:
 
+`https://shira8.github.io/Decoding-Functional-Networks-for-Visual-Categories-via-Graph-Neural-Networks/`
 
-## Start using the template
-To start using the template click on `Use this Template`.
+## What this page includes
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+- Hero section with title, authors, and paper links
+- Static hero figure
+- Overview and abstract
+- Dataset and labeling section
+- Signed GNN method section
+- Results section
+- BibTeX block
+- Template credit footer
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+## Files to add
 
-## What's New
+Put these files in the repository before publishing:
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+### PDFs
+- `static/pdfs/paper.pdf`
+- `static/pdfs/poster.pdf`
+- `static/pdfs/slides.pdf`
 
-## Components
+### Images
+- `static/images/pipeline_overview.png`
+- `static/images/experiment_setup.png`
+- `static/images/labeling_fusion.png`
+- `static/images/model_architecture.png`
+- `static/images/tsne_progression.png`
+- `static/images/category_networks.png`
+- `static/images/social_preview.png`
+- `static/images/favicon.ico`
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
+## Recommended image content
 
-## Customization
+### 1. `pipeline_overview.png`
+A clean summary figure for the whole project:
 
-The HTML file has TODO comments showing what to replace:
+`stimulus image -> fMRI responses -> connectivity matrix -> signed graph -> Signed GNN -> explainability`
 
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
+Best source: your presentation slide with  
+**fMRI / Visual stimulus / GNN / Connectivity Matrix / Sparse edge mask / Explainability**.
 
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
+### 2. `experiment_setup.png`
+The experiment flow:
 
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
+`scanner -> natural image presentation -> button press / task -> brain response`
 
-## Tips
+Best source: your “fMRI Experiment setup” slide.
 
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
+### 3. `labeling_fusion.png`
+A figure showing how labels are generated from COCO masks and captions.
 
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
+Best source:
+- your “How to Label the Data?” slides
+- your soft-labeling / semantic evidence vs spatial evidence slide
+- or Fig. 1 from the paper
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+### 4. `model_architecture.png`
+A clean architecture figure of the Signed GNN.
+
+Suggested content:
+- connectivity matrix input
+- split into `A+` and `A-`
+- masked graph convolutions
+- global pooling
+- classifier
+- explainability outputs
+
+Best source: your model slide or a cleaned redraw of it.
+
+### 5. `tsne_progression.png`
+A 4-panel training progression:
+- Epoch 0
+- 1/3 training
+- 2/3 training
+- End of training
+
+Best source: your existing t-SNE figure.
+
+### 6. `category_networks.png`
+Category-selective cortical relevance maps.
+
+Suggested content:
+- sports
+- food
+- vehicle
+- LH / RH if the layout stays readable
+
+Best source: your poster brain maps or the slide with discovered category-selective networks.
+
+### 7. `social_preview.png`
+A 1200x630 image for GitHub / Twitter / LinkedIn previews.
+
+Suggested layout:
+- title on the left
+- one pipeline graphic
+- one brain relevance result panel
+- dark clean background
+
+### 8. `favicon.ico`
+A simple icon, for example:
+- small brain silhouette
+- brain + graph nodes
+- connectivity matrix icon
+
+## How to publish on GitHub Pages
+
+1. Push the updated files to the repository.
+2. Open **Settings -> Pages** in GitHub.
+3. Under **Build and deployment**, choose:
+   - **Source:** Deploy from a branch
+   - **Branch:** `master` (or `main`, whichever your repo uses)
+   - **Folder:** `/ (root)`
+4. Save.
+5. Wait a minute or two for the site to build.
+
+## Main file to edit
+
+Most content is controlled in:
+
+- `index.html`
+
+## Notes
+
+- The page already includes the arXiv link; add Google Scholar later if you want.
+- Keep the footer credit block, since the original template asks for it.
+- Compress large PNG files before pushing them.
+
+## Suggested section order
+
+1. Title + links
+2. Static hero figure
+3. Overview
+4. Abstract
+5. Dataset and labeling
+6. From fMRI to signed graphs
+7. Results
+8. Key findings
+9. BibTeX
+
+## Acknowledgment
+
+This page was built using the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template), adopted from the Nerfies project page.
